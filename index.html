@@ -126,6 +126,8 @@
         <a class="btn" id="aelfLink" target="_blank" rel="noopener">📖 Évangile du jour (AELF)</a>
         <a class="btn secondary" href="guide.html">📘 Guide du parcours</a>
          <a class="btn secondary" id="meditationLink" target="_blank" rel="noopener">🕯 Méditation du jour</a>
+        <button class="btn secondary" id="installBtn" style="display:none" onclick="promptInstall()"> ⬇️ Installer l’app </button>
+
       </div>
     </div>
 
@@ -887,5 +889,13 @@ $("resetAll").addEventListener("click", () => {
   renderAll();
 })();
 </script>
+  <script src="pwa-install.js"></script>
+<script>
+  // Service Worker (offline + cache)
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("./sw.js");
+  }
+</script>
+
 </body>
 </html>
